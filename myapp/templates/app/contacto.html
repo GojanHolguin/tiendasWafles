@@ -1,0 +1,63 @@
+{% extends 'app/layout.html' %}
+
+    {% load static %}
+
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'app/css/consultas.css' %}">
+    {% endblock css %}
+
+    {% load crispy_forms_tags %}
+
+    {% block js %}
+        <script src="{% static 'app/js/consultas.js' %}"></script>
+    {% endblock js %}
+
+    {% block contenido_principal %}
+
+        <section class="form_wrap">
+            <section class="contacto_info">
+                <section class="info_titulo">
+                    <span class="fas fa-user-circle"></span>
+                    <h2>INFORMACION<br>DE CONTACTO</h2>
+                </section>
+                <section class="info_items">
+                    <p><span class="fas fa-envelope"></span> Chikiswaffles@gmail.com </p>
+                    <p>Este formulario es para hacer consultas.</p>
+                </section>
+            </section>
+
+            <form method="POST" class="formulario">
+
+            {% csrf_token %}
+
+            {{ crispy }}
+
+                <h2>Envia un Mensaje</h2>
+
+                <div class="user_info">
+
+                {% comment %} {{ form }} {% endcomment %}
+
+                    <label for="names"><span class="fas fa-user-alt"></span>Nombres*</label>
+                    <input type="text" id="names" name="nombre" required>
+
+                    <label for="email"><span class="fas fa-envelope"></span>Correo Electronico*</label>
+                    <input type="text" id="email" name="correo" required>
+
+                    <label for="phone"><span class="fas fa-mobile"></span>Telefono</label>
+                    <input type="text" id="phone" name="telefono">
+
+                    <label for="mensaje"><span class="far fa-paper-plane"></span>Mensaje*</label>
+                    <textarea id="mensaje" name="mensaje" required></textarea>
+
+                    <input type="submit" value="Enviar" id="btnSend">
+
+                </div>
+
+            </form>
+
+            {{ mensaje }}
+
+        </section>
+
+    {% endblock contenido_principal %}

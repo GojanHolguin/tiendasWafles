@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chiki´s Waffles</title>
+
+    {% load static %}
+
+    <link rel="icon" type="image/png" href="{% static 'app/images/chikiswaffles2.png' %}">
+
+    {% block css %}
+    {% endblock css %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/styleLayout.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    {% load pwa %}
+
+    {% progressive_web_app_meta %}
+
+</head>
+
+<body>
+    <div id="principal">
+        <header>
+            <div>
+                <nav class="nav">
+                    <div class="logo">
+                        <a href="{% url 'index' %}"><img src="{% static 'app/images/chikiswaffles.png' %}"
+                                alt="Logo pagina" width="160"></a>
+                    </div>
+
+                    <ul>
+                        <li><a href="{% url 'productos' %}">Productos</a></li>
+                        <li><a href="{% url 'contacto' %}">Consultas</a></li>
+
+                        {% if perms.myapp.add_productos_w %}
+                        <li>
+                            <a href="{% url 'agregar_producto' %}">Agregar productos</a>
+                        </li>
+                        {% endif %}
+                        {% if perms.myapp.view_productos_w %}
+                        <li>
+                            <a href="{% url 'listar_producto' %}">Listar productos</a>
+                        </li>
+                        {% endif %}
+
+                        {% if user.is_authenticated %}
+
+                        <li><a href="{% url 'logout' %}" onclick="cerrarSesion">Cerrar sesion</a>
+                        </li>
+                        <li><a href="#">@{{ user.username }}</a>
+                        </li>
+
+                        {% else %}
+                        <li><a href="{% url 'registro' %}">Registrate</a></li>
+
+                        <li><a href="{% url 'login' %}">Iniciar Sesion</a></li>
+                        {% endif %}
+
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+
+        <div class="contenido_principal">
+
+            {% block contenido_principal %}
+            {% endblock contenido_principal %}
+        </div>
+
+
+        <section>
+            <footer>
+                <div class="contenedorf">
+                    <div class="lista1">
+                        <ul>
+                            <li><a href="#">
+                                    <h4>Nosotros</h4>
+                                </a></li>
+                            <li><a href="#">
+                                    <h4>Privacidad</h4>
+                                </a></li>
+                            <li><a href="#">
+                                    <h4>Terminos y condiciones</h4>
+                                </a></li>
+                            <li><a href="admin/">
+                                    <span class="fas fa-users-cog"></span>
+                                </a></li>
+                        </ul>
+                    </div>
+
+                    <div class="redes">
+                        <h4>Siguenos en:</h4>
+                        <a href="#" class="fab fa-instagram fa-3"></a>
+                        <a href="#" class="fab fa-twitter fa-3"></a>
+                    </div>
+                </div>
+
+                <div class="copy">
+                    <div class="nombre">
+                        <p>&copy; 2017 all rights reserved by Chikiswaffles</p>
+                    </div>
+
+                    <div class="correo">
+                        <p>Chikiswaffles@gmail.com</p>
+                    </div>
+
+                </div>
+            </footer>
+        </section>
+
+
+    </div>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {% if messages %}
+
+    {% for m in messages %}
+
+    <script>
+        Swal.fire({
+            'title': 'Felicitaciones',
+            'text': '{{m}}',
+            'icon': 'success'
+        })
+    </script>
+
+    {% endfor %}
+
+    {% endif %}
+
+    {% block js %}
+    <script src="{% static 'app/js/jquery-3.6.0.js' %}"></script>
+    <script src="{% static 'app/js/cerrar_sesion.js' %}"></script>
+    <script>
+            // sweetalert
+    </script>
+    {% endblock js %}
+</body>
+
+</html>
+
+{% comment %} <form class="d-flex">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+
+<a tabindex="0" class="btn btn-lg btn-danger" role="button" data-bs-toggle="popover" data-bs-trigger="focus"
+    title="Dismissible popover"
+    data-bs-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
+{% endcomment %}

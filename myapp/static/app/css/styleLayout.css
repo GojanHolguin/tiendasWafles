@@ -1,0 +1,279 @@
+@charset "utf-8";
+
+/* Home */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+body{
+    background-color: #fff8f8;
+    font-family: 'Century Gothic';
+    width: 100%;
+    height: 100%;
+}
+
+/* Header */
+
+header{
+    background-color: #5e462a;
+    height: 14vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.titulo{
+    color: rgb(255, 248, 248);
+    font-family: 'Century Gothic';
+    font-size: 25px;
+    text-align:center;
+    padding-top: 10%;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    padding-left: 1%;
+    padding-top: 1.5%;
+}
+.nav ul{
+    padding-top: 2%;
+}
+.nav ul li{
+	display:inline;
+}
+.nav ul li a{
+	text-decoration:none;
+    font-weight: bold;
+    font-size: 17px;
+	padding:10px 14px;
+	color: rgb(255, 248, 248);
+    padding-top: 2%;
+}
+
+
+
+/* Section */
+
+.contenido_principal{
+    background-color: rgb(255, 248, 248);
+}
+
+.titulo-s{
+    color: #5e462a;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-top: 8%;
+}
+
+h2{
+    font-size: 30px;
+}
+
+h3{
+    font-size: 20px;
+}
+
+h4{
+    font-size: 15px;
+}
+
+.cat1{
+    color: rgb(94, 70, 42);
+    padding-top: 5%;
+    margin-bottom: 3%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+
+
+/* section1 */
+.container1{
+    color: rgb(94, 70, 42);
+    background-color: rgb(255, 248, 248);
+    display: flex;
+    padding-left: 7%;
+    padding-right: 15%;
+}
+
+.card1{
+    padding-left: 12%;
+    padding-top: 1%;
+    padding-bottom: 5%;
+}
+
+.card1 a{
+    text-decoration: none;
+    color: rgb(94, 70, 42);
+}
+
+.imagen{
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+
+
+
+/* section2 */
+.container2{
+    color: rgb(94, 70, 42);
+    background-color: rgb(255, 248, 248);
+    display: flex;
+    padding-left: 7%;
+    padding-right: 15%;
+}
+.card2{
+    padding-left: 12%;
+    padding-top: 1%;
+    padding-bottom: 5%;
+}
+.card2 a{
+    text-decoration: none;
+    color: rgb(94, 70, 42);
+}
+
+
+
+/* section3 */
+.container3{
+    color: rgb(94, 70, 42);
+    background-color: rgb(255, 248, 248);
+    display: flex;
+    padding-left: 7%;
+    padding-right: 15%;
+}
+.card3{
+    padding-left: 12%;
+    padding-top: 1%;
+    padding-bottom: 5%;
+}
+.card3 a{
+    text-decoration: none;
+    color: rgb(94, 70, 42);
+}
+
+
+/* section4 */
+.container4{
+    color: rgb(94, 70, 42);
+    background-color: rgb(255, 248, 248);
+    display: flex;
+    padding-left: 7%;
+    padding-right: 15%;
+    margin-bottom: 15vh;
+}
+.card4{
+    padding-left: 12%;
+    padding-top: 1%;
+    padding-bottom: 5%;
+}
+.card4 a{
+    text-decoration: none;
+    color: rgb(94, 70, 42);
+}
+
+
+
+/* Footer */
+footer{
+    background-color: rgb(94, 70, 42);
+    height: 57vh;
+    padding: 0;
+    margin: 0;
+    color: rgb(255, 248, 248);
+}
+.contenedorf{
+    display: flex;
+    list-style: none;
+    text-align: justify;
+}
+.contenedorf ul{
+    margin:0;
+	padding:0;
+	margin-top: 5vh;
+    margin-left: 40vh;
+}
+.contenedorf ul li{
+    list-style: none;
+}
+.lista1 a{
+    color: rgb(255, 248, 248);
+    font-family: 'Century Gothic';
+    font-size: 8px;
+    text-decoration: none;
+    line-height: 50px;
+}
+.redes{
+    margin-top: 5vh;
+    margin-left: 81vh;
+}
+
+
+.copy{
+    color: rgb(255, 248, 248);
+    font-family: 'Century Gothic';
+    font-size: 8px;
+    margin-left: 40vh;
+    margin-top: 20vh;
+    display: flex;
+}
+
+.nombre{
+    font-size: 12px;
+    margin-left: 0px;
+}
+
+.correo{
+    font-size: 12px;
+    margin-left: 75vh;
+}
+
+.fab.fas{
+    padding: 10px;
+    text-align: center;
+}
+
+.fa-search{
+    padding: 6px;
+    font-size: 15px;
+}
+
+.fa-twitter{
+    padding: 6px;
+    COLOR: #405DE6;
+    width: 30px;
+    height: 24px;
+    text-align: center;
+    font-size: 33px;
+    text-decoration: none;
+}
+
+.fa-instagram{
+    padding: 6px;
+    COLOR: #833AB4;
+    width: 30px;
+    height: 24px;
+    text-align: center;
+    font-size: 33px;
+    text-decoration: none;
+}
+
+.fa-users-cog{
+    padding: 6px;
+    COLOR: rgb(255, 248, 248);
+    width: 30px;
+    height: 24px;
+    text-align: center;
+    font-size: 33px;
+    text-decoration: none;
+}
+
+/* <i class="fas fa-dollar-sign"></i>
+*/

@@ -1,0 +1,39 @@
+{% extends 'app/layout.html' %}
+
+{% block contenido_principal %}
+
+{% load static %}
+
+{% load humanize %}
+
+<section>
+    <div class="titulo-s">
+        <h2>Recomendaciones</h2>
+    </div>
+
+    {% for p in productos %}
+
+    <div class="cat1">
+        <h3>{{ p.categoria | capfirst }}</h3>
+    </div>
+
+    <div class="container1">
+        <div class="card1">
+            {% if p.imagen %}
+                <img src="{{ p.imagen.url }}" class="imagen" alt="img1w" width="250">
+                {% endif %}
+                <a href="#">
+                    <h4>{{ p.nombre | title }}</h4>
+                </a>
+
+                <h5>{{ p.descripcion }}</h5>
+
+                <h5>${{ p.precio | intcomma }}</h5>
+        </div>
+    </div>
+
+    {% endfor %}
+
+</section>
+
+{% endblock %}

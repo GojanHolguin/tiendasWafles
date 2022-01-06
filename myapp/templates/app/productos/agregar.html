@@ -1,0 +1,55 @@
+{% extends 'app/layout.html' %}
+
+    {% load static %}
+
+    {% block css %}
+    {% comment %} <style>
+
+        .form-control{
+            width: 95%;
+        }
+
+    </style> {% endcomment %}
+
+    {% endblock css %}
+
+    {% block contenido_principal %}
+
+    {% load crispy_forms_tags %}
+
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+
+                    <h2>Agregar Productos</h2>
+                    <p>Este formulario es para agregar Productos.</p>
+                    <hr>
+                    <form action="" method="post" enctype="multipart/form-data">
+
+                        {% csrf_token %}
+                        {{ form | crispy }}
+
+                        <hr>
+                        <br>
+                        <div class="d-flex justify-content-end">
+                            
+                            <input type="submit" value="Cancelar" class="btn btn-secondary">
+                            &nbsp;
+                            <input type="submit" value="Guardar" class="btn btn-primary">
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    {% endblock contenido_principal %}
